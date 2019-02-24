@@ -2,6 +2,10 @@
 #include "mipi.h"
 
 int main(int argc, char **argv) {
-    std::cout << "Hello, world!" << std::endl;
+    
+    mipi_long_packet_t lp;
+    mipi_long_packet_checksum(lp) = 10;
+    
+    std::cout << "Hello, world!" << sizeof(mipi_long_packet_t) <<  mipi_long_packet_checksum(lp) << std::endl;
     return 0;
 }
