@@ -3,7 +3,7 @@
 
 #define STRUCT_PACKED __attribute__((__packed__))
 
-typedef struct {
+typedef struct STRUCT_PACKED _mipi_dpi_t{
     uint8_t SoT;
     uint8_t payload;
     uint8_t Eot;
@@ -11,10 +11,10 @@ typedef struct {
 
 
 typedef enum {
-    
+    AAA
 } data_type_e;
 
-typedef struct STRUCT_PACKED {
+typedef struct STRUCT_PACKED _mipi_data_id_t{
     data_type_e data_type:6;
     uint8_t virtual_channel_indentifier:4;
 } mipi_data_id_t;
@@ -39,7 +39,7 @@ typedef struct STRUCT_PACKED {
     mipi_packet_header_t packet_header;
     /// payload size is packet_header.word_count
     uint8_t payload[];
-    /// checksum is at end of packet
+    // checksum is at end of packet
     // uint16_t checksum;
 } mipi_long_packet_t;
 
