@@ -20,13 +20,13 @@ typedef struct STRUCT_PACKED _mipi_data_id_t{
 } mipi_data_id_t;
 
 
-typedef struct STRUCT_PACKED {
+typedef struct STRUCT_PACKED _mipi_packet_header_t{
     mipi_data_id_t data_id;
     uint16_t word_count;
     uint8_t ecc;
 } mipi_packet_header_t;
 
-typedef struct STRUCT_PACKED {
+typedef struct STRUCT_PACKED _mipi_short_packet_t{
     mipi_data_id_t data_id;
     uint8_t data0;
     uint8_t data1;
@@ -35,7 +35,7 @@ typedef struct STRUCT_PACKED {
 
 
 #define mipi_long_packet_checksum(packet) (*(int16_t*)&((packet).payload[(packet).packet_header.word_count]))
-typedef struct STRUCT_PACKED {
+typedef struct STRUCT_PACKED _mipi_long_packet_t{
     mipi_packet_header_t packet_header;
     /// payload size is packet_header.word_count
     uint8_t payload[];
