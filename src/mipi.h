@@ -16,7 +16,7 @@ typedef enum {
 
 typedef struct STRUCT_PACKED _mipi_data_id_t{
     data_type_e data_type:6;
-    uint8_t virtual_channel_indentifier:4;
+    uint8_t virtual_channel_indentifier:2;
 } mipi_data_id_t;
 
 
