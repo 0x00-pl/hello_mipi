@@ -11,7 +11,11 @@ typedef struct STRUCT_PACKED _mipi_dpi_t{
 
 
 typedef enum {
-    AAA
+    MIPI_SYNC_V_START=0x01,
+    MIPI_SYNC_V_END=0x11,
+    MIPI_SYNC_H_START=0x21,
+    MIPI_SYNC_H_END=0x31,
+    MIPI_COMPRESSION_MODE=0x07
 } data_type_e;
 
 typedef struct STRUCT_PACKED _mipi_data_id_t{
