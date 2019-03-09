@@ -3,7 +3,8 @@
 
 int main(int argc, char **argv)
 {
-    (void) argc; (void) argv;
+	(void)argc;
+	(void)argv;
 	mipi_long_packet_t lp;
 	mipi_long_packet_checksum(lp) = 10;
 
