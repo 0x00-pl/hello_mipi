@@ -9,7 +9,26 @@ typedef struct STRUCT_PACKED _mipi_dpi_t {
 	uint8_t Eot;
 } mipi_dpi_t;
 
-typedef enum {
+typedef struct STRUCT_PACKED _mipi_error_report_t {
+    uiny8_t sot_error:1;
+    uiny8_t sot_sync_error:1;
+    uiny8_t eot_error:1;
+    uiny8_t escape_mode_entry_command_error:1;
+    uiny8_t low_power_transmit_sync_error:1;
+    uiny8_t peripheral_timeout_error:1;
+    uiny8_t false_control_error:1;
+    uiny8_t contention_detected:1;
+    uiny8_t ecc_error_single_bit:1;
+    uiny8_t ecc_error_multi_bit:1;
+    uiny8_t checksum_error:1;
+    uiny8_t dsi_data_type_not_recognized:1;
+    uiny8_t dsi_vc_id_invalid:1;
+    uiny8_t invalid_transmission_length:1;
+    uiny8_t reserved:1;
+    uiny8_t dsi_protocol_violation:1;
+} mipi_error_report_t;
+
+typedef enum _data_type_e{
 	MIPI_SYNC_V_START = 0x01,
 	MIPI_SYNC_V_END = 0x11,
 	MIPI_SYNC_H_START = 0x21,
