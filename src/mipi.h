@@ -10,25 +10,25 @@ typedef struct STRUCT_PACKED _mipi_dpi_t {
 } mipi_dpi_t;
 
 typedef struct STRUCT_PACKED _mipi_error_report_t {
-    uiny8_t sot_error:1;
-    uiny8_t sot_sync_error:1;
-    uiny8_t eot_error:1;
-    uiny8_t escape_mode_entry_command_error:1;
-    uiny8_t low_power_transmit_sync_error:1;
-    uiny8_t peripheral_timeout_error:1;
-    uiny8_t false_control_error:1;
-    uiny8_t contention_detected:1;
-    uiny8_t ecc_error_single_bit:1;
-    uiny8_t ecc_error_multi_bit:1;
-    uiny8_t checksum_error:1;
-    uiny8_t dsi_data_type_not_recognized:1;
-    uiny8_t dsi_vc_id_invalid:1;
-    uiny8_t invalid_transmission_length:1;
-    uiny8_t reserved:1;
-    uiny8_t dsi_protocol_violation:1;
+    uint8_t sot_error:1;
+    uint8_t sot_sync_error:1;
+    uint8_t eot_error:1;
+    uint8_t escape_mode_entry_command_error:1;
+    uint8_t low_power_transmit_sync_error:1;
+    uint8_t peripheral_timeout_error:1;
+    uint8_t false_control_error:1;
+    uint8_t contention_detected:1;
+    uint8_t ecc_error_single_bit:1;
+    uint8_t ecc_error_multi_bit:1;
+    uint8_t checksum_error:1;
+    uint8_t dsi_data_type_not_recognized:1;
+    uint8_t dsi_vc_id_invalid:1;
+    uint8_t invalid_transmission_length:1;
+    uint8_t reserved:1;
+    uint8_t dsi_protocol_violation:1;
 } mipi_error_report_t;
 
-typedef enum _data_type_e{
+typedef enum _mipi_processor_data_type_e{
 	MIPI_SYNC_V_START = 0x01,
 	MIPI_SYNC_V_END = 0x11,
 	MIPI_SYNC_H_START = 0x21,
@@ -74,6 +74,17 @@ typedef enum _data_type_e{
 	MIPI_DO_NOT_USE_1F = 0x1f,
 	MIPI_DO_NOT_USE_2F = 0x2f,
 	MIPI_DO_NOT_USE_3F = 0x3f,
+} mipi_processor_data_type_e;
+
+typedef enum _mipi_peripheral_data_type_e{
+    MIPI_PERIPHERAL_ACKNOWLEDGE_AND_ERROR_REPORT = 0x02,
+    MIPI_PERIPHERAL_END_OF_TRANSMISSION_PACKET = 0x08,
+    MIPI_PERIPHERAL_GENERIC_SHORT_READ_RESPONSE_1 = 0x11,
+    MIPI_PERIPHERAL_GENERIC_SHORT_READ_RESPONSE_2 = 0x12,
+    MIPI_PERIPHERAL_GENERIC_long_READ_RESPONSE = 0x1a,
+    MIPI_PERIPHERAL_DISPLAY_LONG_READ_RESPONSE = 0x1c,
+    MIPI_PERIPHERAL_DISPLAY_SHORT_READ_RESPONSE_1 = 0x21,
+    MIPI_PERIPHERAL_DISPLAY_SHORT_READ_RESPONSE_2 = 0x22
 } data_type_e;
 
 typedef struct STRUCT_PACKED _mipi_data_id_t {
