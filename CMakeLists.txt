@@ -3,6 +3,7 @@ project(mipi)
 file(GLOB SOURCE_FILES
     "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/src/*.c"
+    "${CMAKE_CURRENT_LIST_DIR}/src/*.h"
     )
 
 add_executable(mipi ${SOURCE_FILES})
@@ -20,7 +21,7 @@ else()
     add_dependencies(mipi code_format)
 endif()
     
-    
+
 #doxygen
 find_package(Doxygen)  
 if(NOT DOXYGEN_FOUND)
