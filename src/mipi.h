@@ -76,7 +76,7 @@ typedef enum _mipi_processor_data_type_e{
 	MIPI_DO_NOT_USE_3F = 0x3f,
 } mipi_processor_data_type_e;
 
-static const char mipi_processor_data_type_is_lang[] = {
+static const uint8_t mipi_processor_data_type_is_lang[] = {
     [MIPI_SYNC_V_START] = 0,
     [MIPI_SYNC_V_END] = 0,
     [MIPI_SYNC_H_START] = 0,
@@ -129,11 +129,22 @@ typedef enum _mipi_peripheral_data_type_e{
     MIPI_PERIPHERAL_END_OF_TRANSMISSION_PACKET = 0x08,
     MIPI_PERIPHERAL_GENERIC_SHORT_READ_RESPONSE_1 = 0x11,
     MIPI_PERIPHERAL_GENERIC_SHORT_READ_RESPONSE_2 = 0x12,
-    MIPI_PERIPHERAL_GENERIC_long_READ_RESPONSE = 0x1a,
+    MIPI_PERIPHERAL_GENERIC_LONG_READ_RESPONSE = 0x1a,
     MIPI_PERIPHERAL_DISPLAY_LONG_READ_RESPONSE = 0x1c,
     MIPI_PERIPHERAL_DISPLAY_SHORT_READ_RESPONSE_1 = 0x21,
     MIPI_PERIPHERAL_DISPLAY_SHORT_READ_RESPONSE_2 = 0x22
 } data_type_e;
+
+static const uint8_t mipi_peripheral_data_type_is_lang[] = {
+    [MIPI_PERIPHERAL_ACKNOWLEDGE_AND_ERROR_REPORT] = 0,
+    [MIPI_PERIPHERAL_END_OF_TRANSMISSION_PACKET] = 0,
+    [MIPI_PERIPHERAL_GENERIC_SHORT_READ_RESPONSE_1] = 0,
+    [MIPI_PERIPHERAL_GENERIC_SHORT_READ_RESPONSE_2] = 0,
+    [MIPI_PERIPHERAL_GENERIC_LONG_READ_RESPONSE] = 1,
+    [MIPI_PERIPHERAL_DISPLAY_LONG_READ_RESPONSE] = 1,
+    [MIPI_PERIPHERAL_DISPLAY_SHORT_READ_RESPONSE_1] = 0,
+    [MIPI_PERIPHERAL_DISPLAY_SHORT_READ_RESPONSE_2] = 0
+};
 
 typedef struct STRUCT_PACKED _mipi_data_id_t {
 	data_type_e data_type : 6;
