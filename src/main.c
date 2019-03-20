@@ -1,5 +1,6 @@
 #include "mipi.h"
 
-const char* func(){
-    return arr;
+const char *func()
+{
+	return 0;
 }
