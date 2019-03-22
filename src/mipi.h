@@ -107,7 +107,6 @@ static const uint8_t mipi_processor_data_type_is_lang[] = {
 	[27] = 0xff,
 	[MIPI_PACKED_PIXEL_STREAM_24_BIT_YCVCR_4_2_2] = 1,
 	[MIPI_PACKED_PIXEL_STREAM_36_BIT_RGB_12_12_12] = 1,
-	//3
 	[MIPI_PACKED_PIXEL_STREAM_18_BIT_RGB_6_6_6] = 1,
 	[MIPI_DO_NOT_USE_1F] = 0,
 	[MIPI_DO_NOT_USE_20] = 0,
@@ -118,7 +117,6 @@ static const uint8_t mipi_processor_data_type_is_lang[] = {
 	[37] = 0xff,
 	[38] = 0xff,
 	[39] = 0xff,
-	//4
 	[40] = 0xff,
 	[MIPI_GENERIC_LONG_WRITE] = 1,
 	[42] = 0xff,
@@ -129,7 +127,6 @@ static const uint8_t mipi_processor_data_type_is_lang[] = {
 	[MIPI_DO_NOT_USE_2F] = 0,
 	[MIPI_DO_NOT_USE_30] = 0,
 	[MIPI_SYNC_H_END] = 0,
-	//5
 	[MIPI_TURN_ON_PERIPHERAL] = 0,
 	[51] = 0xff,
 	[52] = 0xff,
