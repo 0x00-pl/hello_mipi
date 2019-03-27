@@ -3,6 +3,9 @@
 
 #define STRUCT_PACKED __attribute__((__packed__))
 
+#define MIPI_SSDC 0x888
+#define MIPI_SSS 0x3444443
+
 typedef struct STRUCT_PACKED _mipi_dpi_t {
 	uint8_t SoT;
 	uint8_t payload;
