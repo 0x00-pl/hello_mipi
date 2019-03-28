@@ -224,6 +224,14 @@ static const uint8_t mipi_peripheral_data_type_is_lang[1 << 6] = {
 	[0x3f] = 0xff,
 };
 
+typedef struct STRUCT_PACKED _mipi_3d_control_payload_t {
+	uint8_t _3d_mode_on : 2;
+	uint8_t _3d_image_format : 2;
+	uint8_t _3d_vsync : 1;
+	uint8_t _3d_l_r_order : 1;
+	uint8_t zero : 2;
+} mipi_3d_control_payload_t;
+
 typedef struct STRUCT_PACKED _mipi_data_id_t {
 	data_type_e data_type : 6;
 	uint8_t virtual_channel_indentifier : 2;
