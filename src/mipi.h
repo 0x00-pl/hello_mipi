@@ -229,8 +229,20 @@ typedef struct STRUCT_PACKED _mipi_3d_control_payload_t {
 	uint8_t _3d_image_format : 2;
 	uint8_t _3d_vsync : 1;
 	uint8_t _3d_l_r_order : 1;
-	uint8_t zero : 2;
+	uint8_t zeros : 2;
 } mipi_3d_control_payload_t;
+
+typedef struct STRUCT_PACKED _mipi_compression_mode_parameters_t {
+	uint8_t compression_enabled : 1;
+	/// + 00 = VESA DSC Standard 1.0
+	/// + 11 = vendor-specific algorithm
+	/// + 01, 10 = reserved, not used
+	uint8_t algorithm_identifier : 2;
+	uint8_t reserved : 3;
+	uint8_t pps_selector : 2;
+	uint8_t zeros1 : 2;
+	uint8_t zeros2;
+} mipi_compression_mode_parameters_t;
 
 typedef struct STRUCT_PACKED _mipi_data_id_t {
 	data_type_e data_type : 6;
