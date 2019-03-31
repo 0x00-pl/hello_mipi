@@ -1,4 +1,4 @@
-#include "crc16.h"
+#include "crc.h"
 
 unsigned short CalculateCRC16(unsigned char *pcDataStream,
 			      unsigned short sNumberOfDataBytes)
