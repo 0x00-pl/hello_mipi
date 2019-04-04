@@ -23,7 +23,6 @@ else()
     add_dependencies(mipi code_format)
 endif()
     
-
 #doxygen
 find_package(Doxygen)  
 if(NOT DOXYGEN_FOUND)
